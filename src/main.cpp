@@ -1,5 +1,4 @@
 #include "core.h"
-#include "log.h"
 
 int main() {
   init_default_logger();

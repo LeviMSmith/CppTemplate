@@ -17,6 +17,10 @@ project "Project"
     "spdlog",
   }
 
+  includedirs {
+    "vendor/args/"
+  }
+
   filter "configurations:Debug"
       defines { "DEBUG" }
       symbols "On"
