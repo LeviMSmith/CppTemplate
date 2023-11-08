@@ -1,2 +1,5 @@
 build/
-log.txt
+bin/
+.cache/
+
+compile_commands.json
