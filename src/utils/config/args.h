@@ -3,13 +3,14 @@
 
 #include "core.h"
 
-typedef struct Args {
+struct Args {
+  static Result create(Args*& args);
+  static void destroy(Args*& args);
+  static Result parse(int argc, char* const argv[], Args* args);
+
   LogLevel log_level;
   const char *config_location;
-} Args;
+};
 
-void args_default(Args* args);
-
-Result parse_args(int argc, char* const argv[], Args* args);
 
 #endif // ARGPARSE_H

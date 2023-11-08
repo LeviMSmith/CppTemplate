@@ -4,7 +4,7 @@
 #include "utils/result.h"
 
 enum LogLevel {
-  DEBUG,
+  DEBUG = 0,
   INFO,
   WARN,
   ERROR,

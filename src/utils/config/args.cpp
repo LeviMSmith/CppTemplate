@@ -20,11 +20,19 @@ void print_usage() {
   printf("%s", usage_message);
 }
 
-void args_default(Args* args) {
+Result Args::create(Args*& args) {
+  args = new Args;
+
   args->log_level = LogLevel::INFO;
+
+  return RESULT_TYPE_SUCCESS;
 }
 
-Result parse_args(int argc, char* const argv[], Args* args) {
+void Args::destroy(Args*& args) {
+  delete args;
+}
+
+Result Args::parse(int argc, char* const argv[], Args* args) {
   int opt;
   while ((opt = getopt(argc, argv, "c::hv")) != -1) {
     switch (opt) {

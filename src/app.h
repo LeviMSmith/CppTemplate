@@ -6,8 +6,13 @@
 #include "utils/config/args.h"
 #include "utils/config/config.h"
 
-struct App {
-  Args args;
+class App {
+public:
+  static Result create(App*& app, Args* args);
+  static void destroy(App*& app);
+
+private:
+  Args* args;
   Config config;
 };
 
